@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ $blue: #72d0eb;
+ $green: #6ab04c;
+ $green-invert: #fff;
+ $orange: #EE5A24;
+ $orange-invert: #fff;
+ // $family-serif: "Merriweather", "Georgia", serif;
+ $primary: $green;
+ $primary-invert: $green-invert;
+ // $family-primary: $family-serif;
+
+ @import "bulma";

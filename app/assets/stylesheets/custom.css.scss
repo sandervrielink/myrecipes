@@ -1,1 +1,16 @@
-@import "bulma";
+// @import "bulma";
+//
+// #logo {
+//   font-size: 1.7em;
+//   letter-spacing: -1px;
+// }
+
+.button.color-text {
+  color: #6ab04c ;
+}
+
+.button.color-text:hover {
+  color: #fff;
+  background-color: #6ab04c;
+  border-color: #fff;
+}
