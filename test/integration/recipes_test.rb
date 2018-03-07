@@ -29,6 +29,8 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_match @recipe1.name, response.body
     assert_match @recipe1.description, response.body
     assert_match @user.chefname, response.body
+    assert_select 'a[href=?]', edit_recipe_path(@recipe1), text: "Recept Aanpassen"
+    assert_select 'a[href=?]', recipe_path(@recipe1), text: "Verwijder Recept"
   end
 
   test "create new valid recipe" do
