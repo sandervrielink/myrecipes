@@ -17,10 +17,17 @@
             <div class="level-right">
               <%= link_to "Recept Aanpassen", edit_recipe_path(@recipe), class: "button is-primary" %>
               <%= link_to "Verwijder Recept", recipe_path(@recipe), method: :delete,
-                                            data: { confirm: "Verwijder recept?" }, 
+                                            data: { confirm: "Verwijder recept?" },
                                             class: "button is-danger" %>
             </div>
           </div>
+          <div class="level">
+            <div class="level-left"></div>
+            <div class="level-right">
+                    [ <%= link_to "Terug naar alle recepten", recipes_path %> ]
+            </div>
+          </div>
+
         </div>
       <hr>
 

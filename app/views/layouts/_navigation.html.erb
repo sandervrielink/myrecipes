@@ -10,36 +10,12 @@
 
 <div id="navbarExampleTransparentExample" class="navbar-menu">
 <div class="navbar-start">
-  <a class="navbar-item" href="https://bulma.io/">
-    Home
-  </a>
   <div class="navbar-item has-dropdown is-hoverable">
-    <a class="navbar-link" href="/documentation/overview/start/">
-      Docs
-    </a>
+    <%= link_to "Recepten", recipes_path, class:"navbar-link" %>
     <div class="navbar-dropdown is-boxed">
-      <a class="navbar-item" href="/documentation/overview/start/">
-        Overview
-      </a>
-      <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
-        Modifiers
-      </a>
-      <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-        Columns
-      </a>
-      <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-        Layout
-      </a>
-      <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-        Form
-      </a>
+      <%= link_to "Recept toevoegen", new_recipe_path, class:"navbar-item" %>
       <hr class="navbar-divider">
-      <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-        Elements
-      </a>
-      <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-        Components
-      </a>
+      <%= link_to "Alle recepten", recipes_path, class:"navbar-item is-active" %>
     </div>
   </div>
 </div>
@@ -53,7 +29,7 @@
             <i class="fab fa-twitter"></i>
           </span>
           <span>
-            Tweet
+            Registreren
           </span>
         </a>
       </p>
@@ -62,7 +38,7 @@
           <span class="icon">
             <i class="fas fa-download"></i>
           </span>
-          <span>Download</span>
+          <span>Inloggen</span>
         </a>
       </p>
     </div>
