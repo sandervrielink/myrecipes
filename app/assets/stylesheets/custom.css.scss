@@ -22,3 +22,12 @@
 .small-1 {
   font-size: .7rem;
 }
+
+// This is foor deleting the notification with jquery
+.notification > button.delete {
+  border: none;
+}
+.is-hidden {
+  display: none;
+}
+// --------------------------------

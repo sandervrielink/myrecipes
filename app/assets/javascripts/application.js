@@ -11,8 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery3
 //= require turbolinks
 //= require_tree .
+
+// Deleting notifications 
+$(document).on('click', '.notification > button.delete', function() {
+    $(this).parent().addClass('is-hidden');
+    return false;
+});
 
 document.addEventListener('DOMContentLoaded', function () {
 
