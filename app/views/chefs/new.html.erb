@@ -1,0 +1,45 @@
+<h1 class="title">signup for the application</h1>
+
+<%= render 'shared/errors', obj: @chef %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns  is-centered">
+      <div class="column is-half">
+        <%= form_for @chef do |f| %>
+          <div class="field">
+            <label class="label"><%= f.label :chefname, "Naam" %></label>
+            <div class="control">
+              <%= f.text_field :chefname, class: "input is-primary",  placeholder: "Naam", autofocus: true %>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label"><%= f.label :email %></label>
+            <div class="control">
+              <%= f.email_field :email, rows: 10, class: "textarea is-primary",  placeholder: "voorbeeld: example@example.nl", autofocus: true %>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label"><%= f.label :password, "Wachtwoord" %></label>
+            <div class="control">
+              <%= f.password_field :password, rows: 10, class: "textarea is-primary",  placeholder: "wachtwoord", autofocus: true %>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label"><%= f.label :password_confirmation, "Herhaal wachtwoord" %></label>
+            <div class="control">
+              <%= f.password_field :password_confirmation, rows: 10, class: "textarea is-primary",  placeholder: "herhaal wachtwoord", autofocus: true %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.submit "Maak mijn account", class: "button is-primary"%>
+            </div>
+          </div>
+        <% end %>
+        <hr>
+        [ <%= link_to "Keer terug naar alle recepten zonder opslaan", recipes_path %> ]
+      </div>
+    </div>
+  </div>
+</section>

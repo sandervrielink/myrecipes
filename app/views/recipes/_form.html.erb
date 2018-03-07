@@ -6,13 +6,13 @@
       <div class="column is-half">
         <%= form_for @recipe do |f| %>
           <div class="field">
-            <label class="label"><%= f.label :Recept %></label>
+            <label class="label"><%= f.label :name, "Recept" %></label>
             <div class="control">
               <%= f.text_field :name, class: "input is-primary",  placeholder: "Geef de titel van het recept weer", autofocus: true %>
             </div>
           </div>
           <div class="field">
-            <label class="label"><%= f.label :Omschrijving %></label>
+            <label class="label"><%= f.label :description, "Omschrijving" %></label>
             <div class="control">
               <%= f.text_area :description, rows: 10, class: "textarea is-primary",  placeholder: "Beschrijf het recept", autofocus: true %>
             </div>
