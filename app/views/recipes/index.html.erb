@@ -13,7 +13,7 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <p class="title is-4"><%= recipe.name %></p>
+                <p class="title is-4"><%= link_to recipe.name, recipe_path(recipe) %></p>
                 <p><%= truncate(recipe.description, length: 150) %></p>
                 <p class="subtitle is-6"><%= time_ago_in_words(recipe.created_at) %> ago</p>
               </div>

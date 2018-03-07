@@ -1,0 +1,10 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-2"><%= @recipe.name %></h1>
+      <p class="text-readable"><%= @recipe.description %></p>
+      <hr>
+      <p class="subtitle is-6">Created <%= time_ago_in_words(@recipe.created_at) %> ago <strong>by </strong><%= @recipe.chef.chefname%></p>
+    </div>
+  </div>
+</section>
