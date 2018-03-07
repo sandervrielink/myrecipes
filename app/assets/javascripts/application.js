@@ -15,9 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
-// Deleting notifications 
+// Deleting notifications
 $(document).on('click', '.notification > button.delete', function() {
-    $(this).parent().addClass('is-hidden');
+    $(this).parent().addClass('is-hidden2');
     return false;
 });
 
