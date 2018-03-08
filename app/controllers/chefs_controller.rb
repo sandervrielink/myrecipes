@@ -27,6 +27,13 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
   end
 
+  def destroy
+  @chef = Chef.find(params[:id])
+  @chef.destroy
+  flash[:danger] = "Chef en alle bijbehorende recepten zijn verwijderd"
+  redirect_to chefs_path
+  end
+
   def update
     @chef = Chef.find(params[:id])
     if @chef.update(chef_params)
