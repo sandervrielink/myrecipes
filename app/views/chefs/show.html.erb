@@ -28,5 +28,11 @@
 </section>
 
 <div class="column">
-    <%= render 'recipes/recipe', obj: @chef.recipes %>
+  <div class="container">
+    <%= will_paginate @chef_recipes, renderer: BulmaPagination::Rails %>
+  </div>
+  <%= render 'recipes/recipe', obj: @chef_recipes %>
+  <div class="container">
+    <%= will_paginate @chef_recipes, renderer: BulmaPagination::Rails %>
+  </div>
 </div>
