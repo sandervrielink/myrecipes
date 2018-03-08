@@ -14,12 +14,15 @@
             <div class="level-left">
               <p class="small-1">Created <%= time_ago_in_words(@recipe.created_at) %> ago</p>
             </div>
-            <div class="level-right">
-              <%= link_to "Recept Aanpassen", edit_recipe_path(@recipe), class: "button is-primary" %>
-              <%= link_to "Verwijder Recept", recipe_path(@recipe), method: :delete,
-                                            data: { confirm: "Verwijder recept?" },
-                                            class: "button is-danger" %>
-            </div>
+            <%= @recipe.chef_id %>
+            <% if logged_in? && current_chef == @recipe.chef %>
+              <div class="level-right">
+                <%= link_to "Recept Aanpassen", edit_recipe_path(@recipe), class: "button is-primary" %>
+                <%= link_to "Verwijder Recept", recipe_path(@recipe), method: :delete,
+                                              data: { confirm: "Verwijder recept?" },
+                                              class: "button is-danger" %>
+              </div>
+            <% end %>
           </div>
           <div class="level">
             <div class="level-left"></div>

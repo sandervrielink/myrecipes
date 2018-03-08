@@ -25,6 +25,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show recipe" do
+    sign_in_as(@user, "password")
     get recipe_path(@recipe1)
     assert_template 'recipes/show'
     assert_match @recipe1.name, response.body
@@ -35,6 +36,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test "create new valid recipe" do
+    sign_in_as(@user, "password")
     get new_recipe_path
     assert_template 'recipes/new'
     name_of_recipe = "chicken sauce"

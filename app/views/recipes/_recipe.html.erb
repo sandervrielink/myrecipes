@@ -11,9 +11,20 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <p class="title is-4"><%= link_to recipe.name, recipe_path(recipe) %></p>
-                <p><%= truncate(recipe.description, length: 150) %></p>
+                <p class="title is-5"><%= link_to recipe.name, recipe_path(recipe) %></p>
+                <p><%= truncate(recipe.description, length: 120) %></p>
                 <p class="subtitle is-6"><%= time_ago_in_words(recipe.created_at) %> ago</p>
+              </div>
+              <div class="media">
+
+                <div class="media-right">
+                  <% if logged_in? && current_chef == recipe.chef %>
+                  <%= link_to "Aanpassen", edit_recipe_path(recipe), class: "button is-primary is-inverted" %>
+                  <%= link_to "Verwijder", recipe_path(recipe), method: :delete,
+                                                data: { confirm: "Verwijder recept?" },
+                                                class: "button is-danger" %>
+                  <% end %>
+                </div>
               </div>
               <div class="media">
                 <div class="media-left">
@@ -22,8 +33,7 @@
                   </figure>
                 </div>
                 <div class="media-content">
-                  <p class="title is-5"><%= recipe.chef.chefname %></p>
-                  <p class="subtitle is-6">@johnsmith</p>
+                      <p class="title is-5"><%= recipe.chef.chefname %></p>
                 </div>
               </div>
             </div>
