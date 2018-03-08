@@ -13,8 +13,9 @@
               </figure>
             </div>
             <div class="card-content">
-              <%= link_to "Delete this chef", chef_path(chef), class: "button is-danger", method: :delete, data: {confirm: "Zeker weten? Alle recepten worden ook verwijderd van deze chef!"} %>
-
+              <% if current_chef == chef %>
+                <%= link_to "Delete this chef", chef_path(chef), class: "button is-danger", method: :delete, data: {confirm: "Zeker weten? Alle recepten worden ook verwijderd van deze chef!"} %>
+              <% end %>
             </div>
             <div class="card-content">
               <div class="content">
