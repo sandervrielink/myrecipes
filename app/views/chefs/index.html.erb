@@ -1,0 +1,25 @@
+<section class="section">
+  <div class="container has-text-centered">
+    <div class="columns is-multiline">
+      <% @chefs.each do |chef| %>
+        <div class="column is-one-fifth">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-square">
+                <%= gravatar_for(chef,size:120) %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <p class="title is-4"><%= link_to chef.chefname.capitalize, chef_path(chef) %></p>
+                <p class="heading">Aantal recepten</p>
+                <p class="title"><%= link_to chef.recipes.count, chef_path(chef) %> </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <div class="columns">
+  </div>
+</section>
