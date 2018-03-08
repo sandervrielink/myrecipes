@@ -1,10 +1,32 @@
-<h1>Chef <%= @chef.chefname %>'s profiel</h1>
+<h1></h1>
 
-<div class="media">
-  <div class="media-left">
-    <figure class="image is-480x480">
-      <%= gravatar_for @chef, size: 140 %>
-    </figure>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-fifth">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-480x480">
+                <%= gravatar_for @chef, size: 140 %>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <h1 class="title">
+            Chef <%= @chef.chefname %>'s profiel
+          </h1>
+          <hr>
+          <h2 class="subtitle">
+            Recepten
+          </h2>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <%= render 'recipes/recipe', obj: @chef.recipes %>
+<div class="column">
+    <%= render 'recipes/recipe', obj: @chef.recipes %>
+</div>
