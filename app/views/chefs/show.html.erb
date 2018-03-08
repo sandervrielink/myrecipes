@@ -1,1 +1,10 @@
-<h1>show chef</h1>
+<h1>Chef <%= @chef.chefname %>'s profiel</h1>
+
+<div class="media">
+  <div class="media-left">
+    <figure class="image is-480x480">
+      <%= gravatar_for @chef, size: 140 %>
+    </figure>
+  </div>
+
+  <%= render 'recipes/recipe', obj: @chef.recipes %>
