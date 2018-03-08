@@ -18,6 +18,13 @@ class ChefsSignupTest < ActionDispatch::IntegrationTest
   end
 
   test "accept valid signup" do
-
+    get signup_path
+    assert_difference "Chef.count", 1 do
+      post chefs_path, params: { chef: { chefname: "Henkie1975", email: "henkie@henkie.nl", password: "password",
+                              password_confirmation: "password" } }
+    end
+    follow_redirect!
+    assert_template 'chefs/show'
+    assert_not flash.empty?
   end
 end
